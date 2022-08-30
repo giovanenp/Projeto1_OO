@@ -35,8 +35,9 @@ public class Main {
     if(aluno.avaliarAluno() == "Reprovado!") {
       System.out.print("Informe a nota da Avaliação Especial do aluno: ");
       notaAE = entrada.nextDouble();  
+      aluno.alteranotaAE(notaAE);
       System.out.println("==================================================================================");
-      System.out.println(aluno.avaliarRecuperacao(notaAE));
+      System.out.println(aluno.avaliarRecuperacao());
       System.out.println("==================================================================================");
     }
   }

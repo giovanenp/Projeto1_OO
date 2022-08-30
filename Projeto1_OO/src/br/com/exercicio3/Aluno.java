@@ -36,8 +36,8 @@ public class Aluno {
     }
   }
 
-  String avaliarRecuperacao(double notaAE){
-    double notaMedia = ((this.notaAV1 + this.notaAV2) + notaAE) / 2;
+  String avaliarRecuperacao(){
+    double notaMedia = ((this.notaAV1 + this.notaAV2) + this.notaAE) / 2;
     if(notaMedia >= 60) {
       return "Aprovado!";
     } else {
