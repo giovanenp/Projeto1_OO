@@ -9,26 +9,23 @@ public class Aluno {
   private String curso;
   private int periodo;
 
-  public Aluno(String nome, int matricula, double notaAV1, double notaAV2, double notaAE, String curso, int periodo) {
+  public Aluno(String nome, int matricula, String curso, int periodo) {
     this.nome = nome;
     this.matricula = matricula;
-    this.notaAV1 = notaAV1;
-    this.notaAV2 = notaAV2;
-    this.notaAE = notaAE;
     this.curso = curso;
     this.periodo = periodo;
   }
 
-  void alteraNotaAV1(int novaNota){
-    this.notaAV1 = novaNota;
+  void alteraNotaAV1(double novaNotaAV1){
+    this.notaAV1 = novaNotaAV1;
   }
 
-  void alteraNotaAV2(int novaNota){
-    this.notaAV2 = novaNota;
+  void alteraNotaAV2(double novaNotaAV2){
+    this.notaAV2 = novaNotaAV2;
   }
 
-  void alteranotaAE(int novaNota){
-    this.notaAE = novaNota;
+  void alteranotaAE(double novaNotaAE){
+    this.notaAE = novaNotaAE;
   }
 
   String avaliarAluno(){
@@ -39,8 +36,8 @@ public class Aluno {
     }
   }
 
-  String avaliarRecuperacao(double notaAV1, double notaAV2, double notaAE){
-    double notaMedia = (notaAV1 + notaAV2 + notaAE) / 3;
+  String avaliarRecuperacao(double notaAE){
+    double notaMedia = ((this.notaAV1 + this.notaAV2) + notaAE) / 2;
     if(notaMedia >= 60) {
       return "Aprovado!";
     } else {
