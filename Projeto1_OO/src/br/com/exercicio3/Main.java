@@ -40,5 +40,7 @@ public class Main {
       System.out.println(aluno.avaliarRecuperacao());
       System.out.println("==================================================================================");
     }
+    System.out.println(aluno.getInfoAluno());
+    System.out.println("==================================================================================");
   }
 }
