@@ -6,9 +6,9 @@ public class Main {
   public static void main(String[] args) {
     String nome, curso;
     int matricula, periodo;
-    double notaAV1, notaAV2, notaAE;
+    float notaAV1, notaAV2, notaAE;
     Scanner entrada = new Scanner(System.in);
-    
+
     System.out.print("Informe o nome do aluno: ");
     nome = entrada.nextLine();
     System.out.print("Informe o número da matricula do aluno: ");
@@ -20,21 +20,21 @@ public class Main {
     periodo = entrada.nextInt();
 
     Aluno aluno = new Aluno(nome, matricula, curso, periodo);
-    
+
     System.out.print("Informe a nota da AV1: ");
-    notaAV1 = entrada.nextDouble();
+    notaAV1 = entrada.nextFloat();
     aluno.alteraNotaAV1(notaAV1);
     System.out.print("Informe a nota da AV2: ");
-    notaAV2 = entrada.nextDouble();
+    notaAV2 = entrada.nextFloat();
     aluno.alteraNotaAV2(notaAV2);
-    
+
     System.out.println("==================================================================================");
     System.out.println(aluno.avaliarAluno());
-    System.out.println("==================================================================================");    
-    
-    if(aluno.avaliarAluno() == "Reprovado!") {
+    System.out.println("==================================================================================");
+
+    if (aluno.avaliarAluno() == "Reprovado!") {
       System.out.print("Informe a nota da Avaliação Especial do aluno: ");
-      notaAE = entrada.nextDouble();  
+      notaAE = entrada.nextFloat();
       aluno.alteranotaAE(notaAE);
       System.out.println("==================================================================================");
       System.out.println(aluno.avaliarRecuperacao());

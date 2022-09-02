@@ -3,9 +3,9 @@ package br.com.exercicio3;
 public class Aluno {
   private String nome;
   private int matricula;
-  private double notaAV1;
-  private double notaAV2;
-  private double notaAE;
+  private float notaAV1;
+  private float notaAV2;
+  private float notaAE;
   private String curso;
   private int periodo;
 
@@ -16,38 +16,36 @@ public class Aluno {
     this.periodo = periodo;
   }
 
-  void alteraNotaAV1(double novaNotaAV1) {
-    this.notaAV1 = novaNotaAV1;
+  public void alteraNotaAV1(float nota) {
+    this.notaAV1 = nota;
   }
 
-  void alteraNotaAV2(double novaNotaAV2) {
-    this.notaAV2 = novaNotaAV2;
+  public void alteraNotaAV2(float nota) {
+    this.notaAV2 = nota;
   }
 
-  void alteranotaAE(double novaNotaAE) {
-    this.notaAE = novaNotaAE;
+  public void alteranotaAE(float nota) {
+    this.notaAE = nota;
   }
 
-  String avaliarAluno() {
+  public String avaliarAluno() {
     if (this.notaAV1 + this.notaAV2 >= 60) {
       return "Aprovado!";
     } else {
-      return "Reprovado!";
+      return "Recuperação!";
     }
   }
 
-  String avaliarRecuperacao() {
-    double notaMedia = ((this.notaAV1 + this.notaAV2) + this.notaAE) / 2;
-    if (notaMedia >= 60) {
+  public String avaliarRecuperacao() {
+    if (((this.notaAV1 + this.notaAV2 + this.notaAE) / 2) >= 60) {
       return "Aprovado!";
     } else {
       return "Reprovado!";
     }
-
   }
 
-  String getInfoAluno() {
+  public String getInfoAluno() {
     return "Aluno: " + this.nome + "\nMatricula: " + this.matricula + "\nCurso: " + this.curso + "\nPeriodo: "
-        + this.periodo + "\nNota AV1: " + this.notaAV1 + "\nNota AV2: " + this.notaAV2 + "\nNota AV3: "+ this.notaAE;
+        + this.periodo + "\nNota AV1: " + this.notaAV1 + "\nNota AV2: " + this.notaAV2 + "\nNota AV3: " + this.notaAE;
   }
 }
